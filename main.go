@@ -18,10 +18,24 @@ func main() {
 		{name: "Prefect, Ford", score: 64},
 	}
 	
+	fmt.Println("Select a score to print (1-3)")
+	var option string
+	fmt.Scanln(&option)
 
 	fmt.Println("Student scores")
 	fmt.Println(strings.Repeat("-", 14))
-	fmt.Println(scores[0].name, scores[0].score)
-	fmt.Println(scores[1].name, scores[1].score)
-	fmt.Println(scores[2].name, scores[2].score)
+	var index int
+	switch option{
+	case "1":
+		index = 0
+	case "2":
+		index = 1
+	case "3":
+		index = 2
+	default:
+		fmt.Println("Invalid option defaulting to 1")
+		index = 0
+	}
+	
+	fmt.Println(scores[index].name, scores[index].score)
 }
